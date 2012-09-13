@@ -1362,7 +1362,7 @@ for x in range(len(sys.argv)):
     if sys.argv[x] == "-dir":
         directory = sys.argv[x + 1];
         if directory[len(directory) - 1] != "\\" and directory[len(directory) - 1] != "/":
-            print("error: terminate dir flag value with directory delimiter");
+            print("error: terminate dir flag value with directory delimiter, i.e. end it in a slash (forward or backward depending on your system)");
             sys.exit(0);
     if sys.argv[x] == "-matrix":
         matrixfile = sys.argv[x + 1];
@@ -1395,7 +1395,11 @@ for x in range(len(sys.argv)):
         aggregateneuse = bool(1);        
     if sys.argv[x] == "-bwan":
         buildadjneuse = bool(1);
-    if sys.argv[x] == "-revtran": #[dir] [comma separated list of coefficients to use]     
+    if sys.argv[x] == "-revtran": #[dir] [comma separated list of coefficients to use]
+        if sys.argv[x + 1][len(sys.argv[x + 1]) - 1] != "\\" and sys.argv[x + 1][len(sys.argv[x + 1]) - 1] != "/":
+            print("error: terminate dir command value with directory delimiter, i.e. end it in a slash (forward or backward depending on your system)");
+            sys.exit(0);
+            
         revtran_adj = LoadAndZeroAdj(sys.argv[x + 1], "matrix.txt");
         revtran_include = { };
         for item in sys.argv[x+2].split(','):
