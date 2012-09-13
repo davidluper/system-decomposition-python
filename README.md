@@ -1,4 +1,4 @@
-Network Flux Analysis (Python)
+system decomposition (python)
 ===
 
-nfa for systems analysis coded in python
+systems decomposition routines coded in python
