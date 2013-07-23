@@ -1329,6 +1329,7 @@ for x in range(len(sys.argv)):
     if sys.argv[x] == "-dvm":
         DVM = bool(1);
         decompose = bool(1);
+        makeadj = bool(1);
         _ADDENVIRON = bool(1);
     if sys.argv[x] == "-decompavg":
         decompose = bool(1);
