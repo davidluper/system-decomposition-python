@@ -1016,6 +1016,7 @@ def DVMSearchReal(set_chains, set_cycles, adj_len, flux_chains, flux_cycles):
     cyclecnt_max = len(set_cycles);
 
     exitcnt = 0;
+    cnt = 0;
     for x in range(2, cyclecnt_max):
 
         chains = None;  
